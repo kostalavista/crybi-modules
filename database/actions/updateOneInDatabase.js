@@ -1,4 +1,4 @@
-const formatStrFromDate = require('../utils/formatStrFromDate');
+const formatStrFromDate = require('../../utils/formatStrFromDate');
 
 function updateOneInDatabase(marketName, data, dataCount, collection, startTime) {
 	return new Promise(resolve => {

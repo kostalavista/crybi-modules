@@ -1,7 +1,6 @@
-const {getEnvParam} = require('crybi-utils');
-const dbUri = getEnvParam('dbUri');
-
 const mongoose = require("mongoose");
+const getEnvParam = require("../../utils/getEnvParam");
+const dbUri = getEnvParam("dbUri");
 
 const conn = mongoose.createConnection(dbUri + 'markets?retryWrites=true&w=majority', {
 	useNewUrlParser: true,

@@ -1,5 +1,5 @@
-const formatStrFromDate = require('../utils/formatStrFromDate');
-const getEnvParam = require('../utils/getEnvParam');
+const formatStrFromDate = require('../../utils/formatStrFromDate');
+const getEnvParam = require('../../utils/getEnvParam');
 
 function insertIntoDatabase(collection, data, dataCount, startTime) {
 	const Model = require('./models/' + collection);

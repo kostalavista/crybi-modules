@@ -1,4 +1,4 @@
-const formatStrFromDate = require('../utils/formatStrFromDate');
+const formatStrFromDate = require('../../utils/formatStrFromDate');
 
 function insertIfNotExistInDatabase(code, data, collection, startTime) {
 	return new Promise(resolve => {

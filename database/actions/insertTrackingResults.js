@@ -1,8 +1,8 @@
-const formatStrFromDate = require('../utils/formatStrFromDate');
-const getCollection = require('../database/getCollection');
+const formatStrFromDate = require('../../utils/formatStrFromDate');
+const getCollection = require('./getCollection');
 
 async function insertTrackingResults(data, startTime) {
-	const Model = require('./models/trackingResults');
+	const Model = require('../models/trackingResults');
 
 	const createdAt = startTime;
 	const createdAtStr = formatStrFromDate(startTime);

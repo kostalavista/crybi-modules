@@ -1,6 +1,6 @@
-const Model = require('./models/unitedProfits');
-const getEnvParam = require('../utils/getEnvParam');
-const {sendUnitedProfits} = require('crybi-utils');
+const Model = require('../models/unitedProfits');
+const getEnvParam = require('../../utils/getEnvParam');
+const sendUnitedProfits = require('../../utils/telegram/sendUnitedProfits');
 
 function upsertUnitedProfits(unitedProfits, action, filter) {
 	const needUpsertUnitedProfits = getEnvParam('needUpsertUnitedProfits');

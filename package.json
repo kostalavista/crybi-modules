@@ -1,0 +1,25 @@
+{
+  "name": "crybi-modules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kostalavista/crybi-modules.git"
+  },
+  "author": "kostalavista",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kostalavista/crybi-modules/issues"
+  },
+  "homepage": "https://github.com/kostalavista/crybi-modules#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.11.10",
+    "path": "^0.12.7",
+    "telegram-bot-api": "^2.0.1"
+  }
+}

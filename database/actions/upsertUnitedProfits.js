@@ -4,6 +4,7 @@ const sendUnitedProfits = require('../../telegram/sendUnitedProfits');
 
 function upsertUnitedProfits(unitedProfits, action, filter) {
 	const needUpsertUnitedProfits = getEnvParam('needUpsertUnitedProfits');
+	const needSendToTelegram = getEnvParam('needSendToTelegram');
 
 	return new Promise(resolve => {
 		if (needUpsertUnitedProfits) {
@@ -11,7 +12,8 @@ function upsertUnitedProfits(unitedProfits, action, filter) {
 				Model.insertMany(unitedProfits).then(resolve);
 			} else if (action === 'updateOne') {
 				Model.updateOne(filter, {$set: unitedProfits}).then(() => {
-					sendUnitedProfits(unitedProfits).then(resolve);
+					if (needSendToTelegram) sendUnitedProfits(unitedProfits).then(resolve);
+					else resolve();
 				});
 			} else {
 				resolve();

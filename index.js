@@ -16,6 +16,10 @@ const insertTrackingResults = require('./database/actions/insertTrackingResults'
 const updateOneInDatabase = require('./database/actions/updateOneInDatabase');
 const upsertUnitedProfits = require('./database/actions/upsertUnitedProfits');
 
+const calcMaxChange = require('./singleProfits/calcMaxChange');
+const calcPriceWithOrders = require('./singleProfits/calcPriceWithOrders');
+const calcSingleProfits = require('./singleProfits/calcSingleProfits');
+
 const sendComboProfits = require('./telegram/sendComboProfits');
 const sendMessage = require('./telegram/sendMessage');
 const sendUnitedProfits = require('./telegram/sendUnitedProfits');
@@ -25,6 +29,7 @@ const executionTime = require('./utils/executionTime');
 const formatStrFromDate = require('./utils/formatStrFromDate');
 const getEnvParam = require('./utils/getEnvParam');
 const getLastCreatedTime = require('./utils/getLastCreatedTime');
+const isSameCurrencies = require('./utils/isSameCurrencies');
 const onlyUnique = require('./utils/onlyUnique');
 
 module.exports = {
@@ -46,6 +51,10 @@ module.exports = {
 	updateOneInDatabase,
 	upsertUnitedProfits,
 
+	calcMaxChange,
+	calcPriceWithOrders,
+	calcSingleProfits,
+
 	sendComboProfits,
 	sendMessage,
 	sendUnitedProfits,
@@ -55,5 +64,6 @@ module.exports = {
 	formatStrFromDate,
 	getEnvParam,
 	getLastCreatedTime,
+	isSameCurrencies,
 	onlyUnique,
 };

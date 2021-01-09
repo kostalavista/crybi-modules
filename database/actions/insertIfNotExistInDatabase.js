@@ -2,7 +2,7 @@ const formatStrFromDate = require('../../utils/formatStrFromDate');
 
 function insertIfNotExistInDatabase(code, data, collection, startTime) {
 	return new Promise(resolve => {
-		const Model = require('./models/' + collection);
+		const Model = require('../models/' + collection);
 
 		const query = {code};
 

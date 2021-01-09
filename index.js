@@ -8,10 +8,24 @@ const Tickers = require('./database/models/tickers');
 const TrackingComboProfits = require('./database/models/trackingComboProfits');
 const TrackingResults = require('./database/models/trackingResults');
 const UnitedProfits = require('./database/models/unitedProfits');
+
+const getCollection = require('./database/actions/getCollection');
+const insertIfNotExistInDatabase = require('./database/actions/insertIfNotExistInDatabase');
+const insertIntoDatabase = require('./database/actions/insertIntoDatabase');
+const insertTrackingResults = require('./database/actions/insertTrackingResults');
+const updateOneInDatabase = require('./database/actions/updateOneInDatabase');
+const upsertUnitedProfits = require('./database/actions/upsertUnitedProfits');
+
+const sendComboProfits = require('./telegram/sendComboProfits');
+const sendMessage = require('./telegram/sendMessage');
+const sendUnitedProfits = require('./telegram/sendUnitedProfits');
+
+const currentTimestamp = require('./utils/currentTimestamp');
+const executionTime = require('./utils/executionTime');
+const formatStrFromDate = require('./utils/formatStrFromDate');
 const getEnvParam = require('./utils/getEnvParam');
-const sendComboProfits = require('./utils/telegram/sendComboProfits');
-const sendMessage = require('./utils/telegram/sendMessage');
-const sendUnitedProfits = require('./utils/telegram/sendUnitedProfits');
+const getLastCreatedTime = require('./utils/getLastCreatedTime');
+const onlyUnique = require('./utils/onlyUnique');
 
 module.exports = {
 	ComboProfits,
@@ -24,8 +38,22 @@ module.exports = {
 	TrackingComboProfits,
 	TrackingResults,
 	UnitedProfits,
-	getEnvParam,
+
+	getCollection,
+	insertIfNotExistInDatabase,
+	insertIntoDatabase,
+	insertTrackingResults,
+	updateOneInDatabase,
+	upsertUnitedProfits,
+
 	sendComboProfits,
 	sendMessage,
 	sendUnitedProfits,
+
+	currentTimestamp,
+	executionTime,
+	formatStrFromDate,
+	getEnvParam,
+	getLastCreatedTime,
+	onlyUnique,
 };

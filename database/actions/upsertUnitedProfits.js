@@ -1,6 +1,6 @@
 const Model = require('../models/unitedProfits');
 const getEnvParam = require('../../utils/getEnvParam');
-const sendUnitedProfits = require('../../utils/telegram/sendUnitedProfits');
+const sendUnitedProfits = require('../../telegram/sendUnitedProfits');
 
 function upsertUnitedProfits(unitedProfits, action, filter) {
 	const needUpsertUnitedProfits = getEnvParam('needUpsertUnitedProfits');

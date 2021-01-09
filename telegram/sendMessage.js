@@ -1,4 +1,4 @@
-const getEnvParam = require('../getEnvParam');
+const getEnvParam = require('../utils/getEnvParam');
 const telegram = require('telegram-bot-api');
 
 function sendToTelegram(text) {

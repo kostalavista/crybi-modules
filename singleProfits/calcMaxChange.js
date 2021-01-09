@@ -11,14 +11,14 @@
  */
 function calcMaxChange(fromSymbol, toSymbol, fromValue, tradeType, markets, currencies, orders, marketName, tickers) {
 	const calcPriceWithOrders = require('./calcPriceWithOrders');
-	const market = markets.filter(m => m.marketName == marketName)[0];
+	const market = markets.filter(m => m.marketName === marketName)[0];
 	const feeTrade = market.feeTaker;
 	let ticker;
 
 	//todo precision order
 
 	//состовляем тикер для прямого обмена
-	ticker = (tradeType == 'buy') ? toSymbol + '/' + fromSymbol : fromSymbol + '/' + toSymbol;
+	ticker = (tradeType === 'buy') ? toSymbol + '/' + fromSymbol : fromSymbol + '/' + toSymbol;
 
 	const price = calcPriceWithOrders(fromValue, tradeType, ticker, orders, marketName, feeTrade, tickers);
 
@@ -41,13 +41,13 @@ function calcMaxChange(fromSymbol, toSymbol, fromValue, tradeType, markets, curr
 	// ---------------------------------------------------------------------------
 	let maxTradeDouble;
 
-	const needCurrencies = currencies.filter(currency => currency.marketName == marketName)[0].data;
-	const needTickers = tickers.filter(ticker => ticker.marketName == marketName)[0].data;
+	const needCurrencies = currencies.filter(currency => currency.marketName === marketName)[0].data;
+	const needTickers = tickers.filter(ticker => ticker.marketName === marketName)[0].data;
 
 	needCurrencies.forEach(function (currency) {
 		const symbol = currency.currency_code;
-		const ticker_first = (tradeType == 'buy') ? symbol + '/' + fromSymbol : fromSymbol + '/' + symbol;
-		const ticker_second = (tradeType == 'buy') ? toSymbol + '/' + symbol : symbol + '/' + toSymbol;
+		const ticker_first = (tradeType === 'buy') ? symbol + '/' + fromSymbol : fromSymbol + '/' + symbol;
+		const ticker_second = (tradeType === 'buy') ? toSymbol + '/' + symbol : symbol + '/' + toSymbol;
 
 		let tickerFirst, tradeTypeFirst, tickerSecond, tradeTypeSecond;
 
@@ -107,6 +107,5 @@ function calcMaxChange(fromSymbol, toSymbol, fromValue, tradeType, markets, curr
 		return maxTradeDirect;
 	}
 }
-
 
 module.exports = calcMaxChange;

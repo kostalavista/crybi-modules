@@ -16,8 +16,6 @@ const insertTrackingResults = require('./database/actions/insertTrackingResults'
 const updateOneInDatabase = require('./database/actions/updateOneInDatabase');
 const upsertUnitedProfits = require('./database/actions/upsertUnitedProfits');
 
-const calcMaxChange = require('./singleProfits/calcMaxChange');
-const calcPriceWithOrders = require('./singleProfits/calcPriceWithOrders');
 const calcSingleProfits = require('./singleProfits/calcSingleProfits');
 
 const sendComboProfits = require('./telegram/sendComboProfits');
@@ -51,8 +49,6 @@ module.exports = {
 	updateOneInDatabase,
 	upsertUnitedProfits,
 
-	calcMaxChange,
-	calcPriceWithOrders,
 	calcSingleProfits,
 
 	sendComboProfits,

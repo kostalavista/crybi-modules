@@ -7,19 +7,19 @@ const SingleProfitsLite = require('./database/models/singleProfitsLite');
 const Tickers = require('./database/models/tickers');
 const TrackingComboProfits = require('./database/models/trackingComboProfits');
 const TrackingResults = require('./database/models/trackingResults');
+const UnitedTrackingProfits = require('./database/models/unitedTrackingProfits');
 
 const getCollection = require('./database/actions/getCollection');
 const insertIfNotExistInDatabase = require('./database/actions/insertIfNotExistInDatabase');
 const insertIntoDatabase = require('./database/actions/insertIntoDatabase');
 const insertTrackingResults = require('./database/actions/insertTrackingResults');
 const updateOneInDatabase = require('./database/actions/updateOneInDatabase');
-const upsertUnitedProfits = require('./database/actions/upsertUnitedProfits');
-
+const upsertUnitedTrackingProfits = require('./database/actions/upsertUnitedTrackingProfits');
 const calcSingleProfits = require('./singleProfits/calcSingleProfits');
 
 const sendComboProfits = require('./telegram/sendComboProfits');
 const sendMessage = require('./telegram/sendMessage');
-const sendUnitedProfits = require('./telegram/sendUnitedProfits');
+const sendUnitedTrackingProfits = require('./telegram/sendUnitedTrackingProfits');
 
 const currentTimestamp = require('./utils/currentTimestamp');
 const executionTime = require('./utils/executionTime');
@@ -39,19 +39,19 @@ module.exports = {
 	Tickers,
 	TrackingComboProfits,
 	TrackingResults,
+	UnitedTrackingProfits,
 
 	getCollection,
 	insertIfNotExistInDatabase,
 	insertIntoDatabase,
 	insertTrackingResults,
 	updateOneInDatabase,
-	upsertUnitedProfits,
-
+	upsertUnitedTrackingProfits,
 	calcSingleProfits,
 
 	sendComboProfits,
 	sendMessage,
-	sendUnitedProfits,
+	sendUnitedTrackingProfits,
 
 	currentTimestamp,
 	executionTime,

@@ -1,18 +1,18 @@
-const Model = require('../models/unitedProfits');
+const Model = require('../models/unitedTrackingProfits');
 const getEnvParam = require('../../utils/getEnvParam');
-const sendUnitedProfits = require('../../telegram/sendUnitedProfits');
+const sendUnitedTrackingProfits = require('../../telegram/sendUnitedTrackingProfits');
 
-function upsertUnitedProfits(unitedProfits, action, filter) {
+function upsertUnitedTrackingProfits(unitedTrackingProfits, action, filter) {
 	const needUpsertUnitedProfits = getEnvParam('needUpsertUnitedProfits');
 	const needSendToTelegram = getEnvParam('needSendToTelegram');
 
 	return new Promise(resolve => {
 		if (needUpsertUnitedProfits) {
 			if (action === 'insertMany') {
-				Model.insertMany(unitedProfits).then(resolve);
+				Model.insertMany(unitedTrackingProfits).then(resolve);
 			} else if (action === 'updateOne') {
-				Model.updateOne(filter, {$set: unitedProfits}).then(() => {
-					if (needSendToTelegram) sendUnitedProfits(unitedProfits).then(resolve);
+				Model.updateOne(filter, {$set: unitedTrackingProfits}).then(() => {
+					if (needSendToTelegram) sendUnitedTrackingProfits(unitedTrackingProfits).then(resolve);
 					else resolve();
 				});
 			} else {
@@ -24,4 +24,4 @@ function upsertUnitedProfits(unitedProfits, action, filter) {
 	});
 }
 
-module.exports = upsertUnitedProfits;
+module.exports = upsertUnitedTrackingProfits;

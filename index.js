@@ -7,7 +7,6 @@ const SingleProfitsLite = require('./database/models/singleProfitsLite');
 const Tickers = require('./database/models/tickers');
 const TrackingComboProfits = require('./database/models/trackingComboProfits');
 const TrackingResults = require('./database/models/trackingResults');
-const UnitedProfits = require('./database/models/unitedProfits');
 
 const getCollection = require('./database/actions/getCollection');
 const insertIfNotExistInDatabase = require('./database/actions/insertIfNotExistInDatabase');
@@ -40,7 +39,6 @@ module.exports = {
 	Tickers,
 	TrackingComboProfits,
 	TrackingResults,
-	UnitedProfits,
 
 	getCollection,
 	insertIfNotExistInDatabase,

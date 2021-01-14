@@ -73,7 +73,7 @@ function calcMaxChange(fromSymbol, toSymbol, fromValue, tradeType, markets, curr
 			return;
 		}
 
-		if (needTickers.indexOf(ticker_first) > -1 && needTickers.indexOf(ticker_first) > -1) {
+		if (needTickers.indexOf(ticker_first) > -1 && needTickers.indexOf(ticker_second) > -1) {
 			const price_first = calcPriceWithOrders(fromValue, tradeTypeFirst, tickerFirst, orders, marketName, feeTrade, tickers);
 			const price_second = calcPriceWithOrders(price_first.toValue, tradeTypeSecond, tickerSecond, orders, marketName, feeTrade, tickers);
 
